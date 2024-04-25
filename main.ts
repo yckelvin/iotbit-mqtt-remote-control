@@ -26,6 +26,8 @@ convertToText(clientID),
 )
 ESP8266_IoT.connectMQTT("192.168.0.32", 1884, false)
 basic.showNumber(2)
+OLED.init(128, 64)
+basic.showNumber(3)
 basic.pause(2000)
 if (ESP8266_IoT.isMqttBrokerConnected()) {
     basic.showIcon(IconNames.Yes)
