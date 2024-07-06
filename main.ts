@@ -1,16 +1,16 @@
-input.onButtonPressed(Button.A, function () {
-    ESP8266_IoT.publishMqttMessage(convertToText(randint(1, 4)), "myhome/9b00/remote-control", ESP8266_IoT.QosList.Qos2)
-})
-ESP8266_IoT.MqttEvent("myhome/9b00/remote-control", ESP8266_IoT.QosList.Qos2, function (message) {
-    if ((0 as any) == ("1" as any)) {
+ESP8266_IoT.MqttEvent("myhome/bedroom/remote-control", ESP8266_IoT.QosList.Qos2, function (message) {
+    if (message == "1") {
         OLED.writeStringNewLine("Turn on the light")
-    } else if ((0 as any) == ("2" as any)) {
+    } else if (message == "2") {
         OLED.writeStringNewLine("Turn off the light")
-    } else if ((0 as any) == ("3" as any)) {
+    } else if (message == "3") {
         OLED.writeStringNewLine("Turn on the fan")
-    } else if ((0 as any) == ("4" as any)) {
+    } else if (message == "4") {
         OLED.writeStringNewLine("Turn off the fan")
     }
+})
+input.onButtonPressed(Button.A, function () {
+    ESP8266_IoT.publishMqttMessage(convertToText(randint(1, 4)), "myhome/bedroom/remote-control", ESP8266_IoT.QosList.Qos2)
 })
 basic.showNumber(0)
 ESP8266_IoT.initWIFI(SerialPin.P8, SerialPin.P12, BaudRate.BaudRate115200)
