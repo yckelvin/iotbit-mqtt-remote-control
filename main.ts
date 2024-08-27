@@ -10,7 +10,7 @@ ESP8266_IoT.MqttEvent("myhome/bedroom/remote-control", ESP8266_IoT.QosList.Qos2,
     }
 })
 input.onButtonPressed(Button.A, function () {
-    ESP8266_IoT.publishMqttMessage(convertToText(randint(1, 4)), "myhome/bedroom/remote-control", ESP8266_IoT.QosList.Qos2)
+    ESP8266_IoT.publishMqttMessage(convertToText(randint(1, 4)), "myhome/bedroom/remote-control", ESP8266_IoT.QosList.Qos1)
 })
 basic.showNumber(0)
 ESP8266_IoT.initWIFI(SerialPin.P8, SerialPin.P12, BaudRate.BaudRate115200)
