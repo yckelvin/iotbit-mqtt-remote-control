@@ -5,18 +5,20 @@
         "core": "*",
         "radio": "*",
         "microphone": "*",
-        "Environment-and-Science-IoT": "github:tinkertanker/pxt-iot-environment-kit#v5.2.4"
+        "Environment-and-Science-IoT": "github:tinkertanker/pxt-iot-environment-kit#v5.2.4",
+        "Huskylens": "github:dfrobot/pxt-dfrobot_huskylens#v2.0.6"
     },
     "files": [
         "main.blocks",
         "main.ts",
-        "README.md"
+        "README.md",
+        "main.py"
     ],
     "testFiles": [
         "test.ts"
     ],
     "targetVersions": {
-        "target": "6.0.28",
+        "target": "7.0.57",
         "targetId": "microbit"
     },
     "supportedTargets": [
